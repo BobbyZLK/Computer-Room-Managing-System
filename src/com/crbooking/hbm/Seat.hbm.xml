@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.crbooking.bean">
+<class name="Seat" table="seat">
+<id name="id" column="id" type="java.lang.Integer">
+<generator class="native" />
+</id>
+<property name="seatName" column="seatName" unique="true" not-null="true"/>
+<property name="isBanned" column="isBanned" />
+<property name="seatCondition" column="seatCondition" />
+<many-to-one name="room" column="roomId" class="com.crbooking.bean.Room" lazy="false"/>
+<property name="akaInRoom" column="akaInRoom" />
+</class>
+</hibernate-mapping>

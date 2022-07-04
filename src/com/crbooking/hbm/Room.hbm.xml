@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.crbooking.bean.Room" table="room">
+ <id name="id" column="id" type="java.lang.Integer">
+ <generator class="native" />
+ </id>
+ <property name="roomName" column="roomName" unique="true" not-null="true" />
+ <property name="isBanned" column="isBanned" not-null="true" />
+ <property name="roomCondition" column="roomCondition" />
+ <property name="openTime" column="openTime" type="java.lang.Integer" />
+ <property name="closeTime" column="closeTime" type="java.lang.Integer" />
+ 
+</class>
+</hibernate-mapping>

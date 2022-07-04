@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.crbooking.bean.Student" table="student">
+<id name="id" column="id" type="java.lang.Integer">
+<generator class="native" />
+</id>
+<property name="accountName" column="accountName" unique="true" not-null="true" />
+<property name="accountKey" column="accountKey" not-null="true" />
+<property name="studentName" column="studentName" />
+<property name="studentSex" column="studentSex" />
+<property name="isBanned" column="isBanned" not-null="true" />
+<property name="remainingHours" column="remainingHours" type="java.lang.Integer" />
+<property name="maxHours" column="maxHours" type="java.lang.Integer" />
+<property name="logInDate" column="logInDate" type="java.time.LocalDate"/>
+<property name="referringKey" column="referringKey" not-null="true"/>
+
+</class>
+</hibernate-mapping>

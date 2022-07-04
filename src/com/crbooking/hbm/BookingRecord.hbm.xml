@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.crbooking.bean.BookingRecord" table="bookingrecord">
+<id name="id" column="id" type="java.lang.Integer">
+<generator class="native" />
+</id>
+<property name="startingTime" column="startingTime" type="java.time.LocalDateTime" not-null="true"/>
+<property name="endingTime" column="endingTime" type="java.time.LocalDateTime" not-null="true"/>
+<many-to-one name="student" column="studentId" class="com.crbooking.bean.Student" lazy="false"/>
+<many-to-one name="room" column="roomId" class="com.crbooking.bean.Room" not-null="true" lazy="false"/>
+<many-to-one name="seat" column="seatId" class="com.crbooking.bean.Seat" lazy="false"/>
+<property name="recordCondition" column="recordCondition" />
+<property name="remark" column="remark" />
+
+</class>
+</hibernate-mapping>
